@@ -5,6 +5,7 @@ import Preview from '@/views/Preview'
 import Swiper from '@/views/SwiperDemo'
 import ScrollPage from '@/views/ScrollByMixins'
 import StoreTest from '@/views/StoreTest'
+import vantList from '@/views/VantList'
 
 Vue.use(Router)
 
@@ -34,12 +35,17 @@ export default new Router({
             path: '/storeTest',
             name: 'StoreTest',
             component: StoreTest
+        },
+        {
+            path: '/vantList',
+            name: 'vantList',
+            component: vantList
         }
     ],
     scrollBehavior (to, from, savedPosition) {
-        alert('scrollBehavior')
+        // alert('scrollBehavior')
         if (savedPosition) {
-            alert('savedPosition')
+            // alert(savedPosition.y)
             return savedPosition
         } else {
             return { x: 0, y: 0 }

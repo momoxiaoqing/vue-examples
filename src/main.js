@@ -5,8 +5,10 @@ import App from './App'
 import router from './router'
 import store from './store'
 import preview from 'vue-preview'
+import list from 'vant'
 
 Vue.use(preview)
+Vue.use(list)
 
 Vue.config.productionTip = false
 

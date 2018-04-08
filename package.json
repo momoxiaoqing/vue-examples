@@ -16,6 +16,7 @@
   "dependencies": {
     "photoswipe": "^4.1.2",
     "swiper": "^4.1.6",
+    "vant": "^1.0.3",
     "vue": "^2.5.2",
     "vue-preview": "https://github.com/momoxiaoqing/vue-preview.git",
     "vue-router": "^3.0.1",
