@@ -5,10 +5,12 @@ import App from './App'
 import router from './router'
 import store from './store'
 import preview from 'vue-preview'
-import list from 'vant'
+import {List, PullRefresh} from 'vant'
+import 'vant/lib/vant-css/index.css'
 
 Vue.use(preview)
-Vue.use(list)
+Vue.use(List)
+Vue.use(PullRefresh)
 
 Vue.config.productionTip = false
 

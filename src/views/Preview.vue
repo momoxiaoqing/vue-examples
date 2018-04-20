@@ -2,8 +2,14 @@
     <div>
         <div @click="goBack">返回</div>
         <h1>{{ss}}</h1>
-        <img class="preview-img" v-for="(item, index) in list" :src="item.src" :key="index" height="100"
-             @click="$preview.open(index, list)">
+        <div>
+            <img class="preview-img-1" v-for="(item, index) in list" :src="item.src" :key="index" height="100"
+                 @click="$preview.open(index, list,1)">
+        </div>
+        <div>
+            <img class="preview-img-2" v-for="(item, index) in list2" :src="item.src" :key="index" height="100"
+                 @click="$preview.open(index, list2,2)">
+        </div>
     </div>
 </template>
 
@@ -22,11 +28,21 @@
                     src: 'static/2.jpg',
                     w: 0,
                     h: 0
+                }],
+                list2: [{
+                    src: img,
+                    w: 0,
+                    h: 0
+                }, {
+                    src: 'static/2.jpg',
+                    w: 0,
+                    h: 0
                 }, {
                     src: 'static/3.jpg',
                     w: 0,
                     h: 0
-                    }]
+                }
+                ]
             }
         },
         methods: {
@@ -38,7 +54,7 @@
     }
 </script>
 <style scoped>
-    img.preview-img {
+    img{
         width: 100px;
     }
 </style>

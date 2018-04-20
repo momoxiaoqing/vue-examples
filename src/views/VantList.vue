@@ -1,12 +1,14 @@
 <template>
     <div>
-        <van-list
-                v-model="loading"
-                :finished="finished"
-                @load="onLoad"
+        <van-pull-refresh v-model="isLoadingUp" @refresh="onRefresh">
+            <van-list
+            v-model="loadingDown"
+            :finished="finished"
+            @load="onLoad"
         >
             <div v-for="item in list" :key="item" style="height: 100px">{{item}}</div>
         </van-list>
+        </van-pull-refresh>
     </div>
 </template>
 
@@ -16,8 +18,10 @@
         data () {
             return {
                 list: [],
-                loading: false,
-                finished: false
+                loadingDown: false,
+                finished: false,
+                count: 0,
+                isLoadingUp: false
             }
         },
         methods: {
@@ -26,11 +30,18 @@
                     for (let i = 0; i < 10; i++) {
                         this.list.push(this.list.length + 1)
                     }
-                    this.loading = false
+                    this.loadingDown = false
 
                     if (this.list.length >= 40) {
                         this.finished = true
                     }
+                }, 500)
+            },
+            onRefresh () {
+                setTimeout(() => {
+                    // this.$toast('刷新成功')
+                    this.isLoadingUp = false
+                    this.count++
                 }, 500)
             }
         },
