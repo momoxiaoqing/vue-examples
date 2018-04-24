@@ -104,7 +104,7 @@
         },
         methods: {
             change: function () {
-                this.$store.commit('changeCount', 10)
+                this.$store.dispatch('changeCount', 10)
             }
         },
         created: function () {
